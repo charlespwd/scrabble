@@ -4,7 +4,7 @@
 (def dictionary "/usr/share/dict/words")
 
 (def scrabble-dictionary
-  "A map of sorted letters => array of words formed by those letters."
+  "A map of sorted letters => list of words formed by those letters."
   (with-open [reader (io/reader dictionary)]
     (->> (for [line (line-seq reader)] line)
          (map (fn [line] {(sort line) [line]}))
