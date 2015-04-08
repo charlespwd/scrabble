@@ -13,6 +13,6 @@
 (defn search [word]
   (get scrabble-dictionary (sort word) nil))
 
-#_(search "table")
-#_(search "ablet")
-#_(search "zzzzz")
+#_(search "table") ;; => ("batel" "blate" "bleat" "table")
+#_(search "ablet") ;; => ("batel" "blate" "bleat" "table")
+#_(search "zzzzz") ;; => nil
