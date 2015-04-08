@@ -6,7 +6,7 @@
 (def scrabble-dictionary
   "A map of sorted letters => list of words formed by those letters."
   (with-open [reader (io/reader dictionary)]
-    (->> (for [line (line-seq reader)] line)
+    (->> (line-seq reader)
          (map (fn [line] {(sort line) [line]}))
          (apply merge-with concat))))
 
